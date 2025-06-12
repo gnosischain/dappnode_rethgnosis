@@ -1,0 +1,16 @@
+version: "3.5"
+services:
+  rethgnosis:
+    build:
+      context: .
+      args:
+        UPSTREAM_VERSION: v0.1.0
+    image: rethgnosis.rethgnosis.public.dappnode.eth:0.0.1
+    restart: unless-stopped
+    volumes:
+      - data:/data
+    ports:
+      - 30503:30503/tcp
+      - 30503:30503/udp
+volumes:
+  data: {}
